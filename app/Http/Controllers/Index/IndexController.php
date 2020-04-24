@@ -17,7 +17,7 @@ class IndexController extends Controller
         // $slide = Redis::get('slide');
  // cache(['slide'=>$null],60);
         $slide = cache('slide');
-        dump($slide);
+        // dump($slide);
     	// dump($slide);
     	if(!$slide){
     		// echo "DB==";
