@@ -30,6 +30,11 @@ class IndexController extends Controller
     	}
         // $slide = unserialize($slide);
     	// dd($slide);
-    	return view("index.index",['slide'=>$slide]);
+
+        // 首页精品展示
+        $best = Goods::select('goods_id','goods_img','goods_name','goods_price')->where('is_best',1)->take(8)->get();
+        // dd($best);
+
+    	return view("index.index",['slide'=>$slide,'best'=>$best]);
     }
 }
